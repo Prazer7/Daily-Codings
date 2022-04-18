@@ -1,3 +1,4 @@
+package ch02;
 public class Ch02Ex04 {
 
 	public static void main(String[] args) {
@@ -18,6 +19,11 @@ public class Ch02Ex04 {
 		
 		char charVar = 'A';   //  문자 출력
 		System.out.println(charVar);
+		
+		System.out.println(Byte.MIN_VALUE + "~" + Byte.MAX_VALUE);
+		System.out.println(Short.MIN_VALUE + "~" + Short.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE + "~" + Integer.MAX_VALUE);
+		System.out.println(Long.MIN_VALUE + "~" + Long.MAX_VALUE);
 
 	}
 
