@@ -15,9 +15,9 @@ public class Ch02Ex08 {
 		byte byteVar3 = (byte) intVar1;
 		System.out.println(byteVar3);
 		
-		byte byteVar4 = (byte) (byteVar1 + byteVar2);
+		byte byteVar4 = (byte) (byteVar1 + byteVar2); // Demotion
 		System.out.println(byteVar4);
-		// 연산을 수행 하면 자동으로 int 값으로 변환
+		
 		
 		int intVar2 = 129;
 		byte byteVar5 = (byte) intVar2;
