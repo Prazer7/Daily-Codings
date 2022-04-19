@@ -13,7 +13,8 @@ public class Start01 {
 		System.out.println(true); 
 	}
 }
-==========================================================================================================================
+=================================================변수의 선언과 출력=======================================================
+
 package ch01;
 public class Ch02Ex02 {
 
@@ -36,4 +37,35 @@ public class Ch02Ex02 {
   int a=1, b=2, c=3   //  여러개의 값을 동시에 작성 가능
   }
   }
-  =================================================변수의 선언과 출력=======================================================
+============================================변수의 종류와 Wrapper Class===================================================
+package ch02;
+public class Ch02Ex04 {
+
+	public static void main(String[] args) {
+
+		byte byteVar = 127; // 메모리에 정수 8bit의 공간 확보
+		short shortVar = 30000; // 메모리에 정수 16bit의 공간 확보
+		int intVar = 2100000000; // 메모리에 정수 32bit의 공간 확보 (정수 변수의 기본형)
+		long longVar = 2200000000L; // 메모리에 정수 64bit의 공간 확보 (숫자 끝에 'L'을 입력)
+		
+		float floatVar = 0.123456789F; //  메모리에 정수 32bit의 공간 확보 (숫자 끝에 'F'를 입력)
+		System.out.println(floatVar); //  
+		double doubleVar = 0.123456789D; // 메모리에 정수 64bit의 공간 확보 (숫자 끝에 'D' 입력은 선택사항)
+		System.out.println(doubleVar);
+		
+		boolean boolVar = false;   //  true or false
+		System.out.println(boolVar);
+		System.out.println(longVar > intVar); //  true
+		
+		char charVar = 'A';   //  문자 출력
+		System.out.println(charVar);
+		
+		System.out.println(Byte.MIN_VALUE + "~" + Byte.MAX_VALUE);
+		System.out.println(Short.MIN_VALUE + "~" + Short.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE + "~" + Integer.MAX_VALUE);
+		System.out.println(Long.MIN_VALUE + "~" + Long.MAX_VALUE);
+
+	}
+
+}
+==========================================================================================================================
