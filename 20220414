@@ -664,3 +664,464 @@ public class Ch03Ex05 {
 	} // main
 
 } // class
+==========================================================삼항 연산자=================================================
+package ch03;
+
+public class Ch03Ex06 {
+
+
+public static void main(String[] args) {
+
+
+System.out.println(1 > 10 ? true : false);
+System.out.println(10 < 100 ? true : false);
+
+int iVar1 = 5;
+
+System.out.println(iVar1 >=5 ? "올림" : "내림");
+
+iVar1 = 4;
+
+System.out.println(iVar1 >=5 ? "올림" : "내림");
+
+}
+
+}
+==============================================논리 부정 / 부호 연산자 / 보수====================================
+package ch03; 
+
+public class Ch03Ex07 { 
+
+public static void main(String[] args) { 
+
+ 
+System.out.println(true);
+
+System.out.println(!true); 
+
+System.out.println(!!true);
+
+// ! : 논리 부정 (NOT)
+
+System.out.println(10);
+
+System.out.println(-10);
+
+System.out.println( -(-10));
+
+// +, - : 부호 연산자 
+
+​
+
+System.out.println( ~ 0 );
+
+System.out.println( ~ 1 );
+
+System.out.println( ~ 2 );
+
+// ~ : 1의 보수 
+
+// 1의 보수 : -128 ~ 127 -> 0의 대칭점은?? -1 
+
+// -3 -2 -1 기준 0 1 2 
+
+System.out.println( ~ 0 +1 );
+
+System.out.println( ~ 1 +1 );
+
+System.out.println( ~ 2 +1 );
+
+//2의 보수 : 1의 보수 + 1 
+
+
+}
+
+}
+============================================right / left shift 연산=============================================
+package ch03; 
+
+/* * shift 연산자 * - 일종의 비트 연산. 
+
+* - 사용 이유 : 작은 메모리 활용. 
+
+* 부호 64 32 16 8 4 2 1 
+
+* 4 : 0 0 0 0 0 1 0 0 
+
+* 4 >> 2 : 0 0 0 0 0 0 0 1 
+
+* 4 << 2 : 0 0 0 1 0 0 0 0 
+
+* >> : right shift : 새로운 자리는 부호(음/양)로 채움 
+
+* << : left shift : 새로운 자리는 0으로 채움 
+
+*/ 
+
+public class Ch03Ex09 { 
+
+public static void main(String[] args) { 
+
+System.out.println( 4 >> 2 );
+
+System.out.println( 4 << 2 );
+
+}
+
+}
+============================================대입 연산자 / 복합 대입 연산자=============================================
+package ch03;
+
+public class Ch03Ex10 {
+
+public static void main(String[] args) {
+
+
+int iVar = 100; // 대입 연산자: 우항의 값을 좌항에 대입
+
+iVar += 7; // iVar = iVar + 7;
+
+iVar -= 7; // iVar = iVar - 7;
+
+iVar *= 7; // iVar = iVar * 7;
+
+iVar /= 7; // iVar = iVar / 7;
+
+iVar %= 7; // iVar = iVar % 7;
+
+iVar &= 7; // iVar = iVar & 7;
+
+iVar |= 7; // iVar = iVar | 7;
+
+iVar ^= 7; // iVar = iVar ^ 7;
+
+iVar >>= 7; // iVar = iVar >> 7;
+
+iVar <<= 7; // iVar = iVar << 7;
+
+iVar >>>= 7; // iVar = iVar >>> 7;
+
+
+} 
+
+} 
+===================================================기초 IF문===================================================
+package ch03;
+
+public class Ch03Ex11 {
+
+public static void main(String[] args) {
+
+int iVar1 = 5;
+
+if(iVar1 > 10) { // if문에는 '{}' (영역 표시)가 붙음
+
+System.out.printlf("10보다 크다");
+
+} 
+
+// iVar1이 10보다 작으므로 출력하지 X (결과 값 X)
+
+int iVar2 = 5;
+
+if (iVar2 < 10) {
+
+System.out.printlf("10보다 작다");
+
+} 
+
+// iVar2가 10보다 작으므로 출력 (결과 값 O)
+
+
+} 
+
+} 
+===================================================Scanner 입력===================================================
+package ch03;
+
+import java.util.Scanner;
+
+// Scanner - jdk가 제공하는 입력기.
+
+// Scanner scan = new Scanner(System.in);
+
+// System.in : 키보드에서 입력 받는 값들이 저장되는 입력 버퍼(메모리).
+
+// 키보드 입력하면 입력 버퍼에 중간 저장. -> Scanner를 통해 중간 저장된 값을 읽어 온다.
+
+
+public class Ch03Ex12 {
+
+public static void main(String[] args) {
+
+Scanner scan = new Scanner(System.in);
+
+// Scanner에 빨간 밑줄 -> [Ctrl]+[Space Bar] -> 'Scanner.util' 선택 -> import java.util.Scanner; 추가됨
+
+
+// 'new'를 이용한 객체 생성
+
+// System.in: 입력 버퍼 (키보드에서 입력된 값들이 보관되는 곳) 
+
+
+System.out.println("0에서 21억 미만의 정수를 입력하세요.");
+
+int iVar = scan.nextInt();
+
+//scan.nextInt() : 정수 가져오기
+
+System.out.println("your input : " + iVar);
+
+System.out.println("실수를 입력하세요.");
+
+double dVar = scan.nextDouble();
+
+//scan.nextDouble() : 실수 가져오기
+
+System.out.println("your input : " + dVar);
+
+System.out.println("단어를 입력하세요.");
+
+String str1 ​= scan.next();
+
+//scan.next() : 단어 가져오기
+
+
+System.out.println("your input : " + str1);
+
+scan.nextLine(); 
+
+// nextLine() : 문장 가져오기 (버려진 엔터값을 받아서 사라지는 문장을 추가)
+
+System.out.println("문장을 입력하세요.");
+
+String str2 = scan.nextLine();
+
+System.out.println("your input : " + str2);
+
+
+scan.close(); // 반드시 close.
+
+} 
+
+
+} 
+==============================================IF문을 활용한 가위바위보 게임 만들기2=================================================
+package ch03;
+
+
+import java.util.Scanner;
+
+
+public class Ch03Ex14 {
+
+
+public static void main(String[] args) {
+
+
+Scanner scan = new Scanner(System.in);
+
+
+//1 : 가위, 2 : 바위, 3 : 보
+
+System.out.print("정수 1 / 2 / 3 입력 : ");
+
+int yourChoice = scan.nextInt();
+
+System.out.println("Your Choice : " + yourChoice);
+
+
+int comChoice = (int) (Math.random() * 3 + 1);
+
+System.out.println("Computer Choice : " + comChoice);
+
+//Math.random() : 0.0 ~ 1.0 미만
+
+//Math.random() * 3 => 0.0 ~2.999999 => 1, 2, 3을 나오게 하기 위해 +1 수행
+
+
+if(yourChoice == 1 && comChoice == 2) {
+
+System.out.println("패배");
+
+}
+
+if(yourChoice == 2 && comChoice == 3) {
+
+System.out.println("패배");
+
+}
+
+if(yourChoice == 3 && comChoice == 1) {
+
+System.out.println("패배");
+
+}
+
+
+if(yourChoice == 1 && comChoice == 3) {
+
+System.out.println("승리");
+
+}
+
+if(yourChoice == 2 && comChoice == 1) {
+
+System.out.println("승리");
+
+}
+
+if(yourChoice == 3 && comChoice == 2) {
+
+System.out.println("승리");
+
+}
+
+
+if(yourChoice == comChoice ) {
+
+System.out.println("비김");
+
+}
+
+
+scan.close();
+
+
+}
+
+
+}
+
+==============================================IF문을 활용한 가위바위보 게임 만들기2=================================================
+package ch03;
+
+
+import java.util.Scanner;
+
+
+public class Ch03Ex15 {
+
+
+public static void main(String[] args) {
+
+
+Scanner scan = new Scanner(System.in);
+
+
+//1 : 가위, 2 : 바위, 3 : 보
+
+System.out.print("정수 1 / 2 / 3 입력 : ");
+
+int yourChoice = scan.nextInt();
+
+System.out.println("Your Choice : " + yourChoice);
+
+
+int comChoice = (int) ( (Math.random() * 3) + 1 );
+
+System.out.println("Computer Choice : " + comChoice);
+
+//Math.random() : 0.0 ~ 1.0 미만
+
+//Math.random() * 3 => 0.0 ~ 2.999999 => 1,2,3을 나오게 하기 위해 +1 수행
+
+
+if( (yourChoice == 1 && comChoice == 2)
+
+|| (yourChoice == 2 && comChoice == 3)
+
+|| (yourChoice == 3 && comChoice == 1) ) {
+
+System.out.println("패배");
+
+}//if
+
+
+if( (yourChoice == 1 && comChoice == 3)
+
+|| (yourChoice == 2 && comChoice == 1)
+
+|| (yourChoice == 3 && comChoice == 2) ) {
+
+System.out.println("승리");
+
+}//if
+
+
+if( yourChoice == comChoice ) {
+
+System.out.println("비김");
+
+}
+
+
+scan.close();
+
+
+}
+
+
+}
+=====================================================If~else문======================================================
+package ch03;
+
+import java.util.Scanner;
+
+public class Ch03Ex16 {
+
+public static void main(String[] args) {
+
+
+int fNum = (int) (Math.random() * 10); // 0 ~ 9
+
+int sNum = (int) (Math.random() * 10); // 0 ~ 9
+
+System.out.println("High / Low Game");
+
+System.out.println("first number : " + fNum);
+
+System.out.println("두 번째 수는 첫 번째 수보다 낮을까요? 높을까요?");
+
+System.out.print("낮으면 1, 높으면 2, 당신의 선택은? : ");
+
+Scanner scan = new Scanner(System.in);
+
+int yourChoice = scan.nextInt(); // 다음에 올 정수
+
+System.out.println("Your Choice : " + yourChoice);
+
+System.out.println("second number : " + sNum);
+
+if(yourChoice == 1) {
+
+if(fNum > sNum) {
+
+System.out.println("승리");
+
+} else {
+
+System.out.println("패배");
+
+}
+
+} else {
+
+if(fNum > sNum) {
+
+System.out.println("패배");
+
+} else {
+
+System.out.println("승리");
+
+}
+
+}
+
+
+scan.close();
+
+}
+
+}
