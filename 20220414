@@ -1089,3 +1089,98 @@ public class Ch03Ex30 {
 	} // main
 
 } // class
+
+=====================================================while문을 활용한 구구단 만들기=========================================================
+package ch03;
+
+public class Ch03Ex39 {
+
+	public static void main(String[] args) {
+		int dan = 2; // 초기식
+		while(dan <= 9) { // 조건식
+			System.out.println("===" + dan + "단===");
+			
+			int gop = 1; // 초기식
+			while(gop <= 9) { //조건식
+				System.out.printf("%d * %d = %d\t", dan, gop, dan * gop);
+				gop++; // 증감식
+			}
+		
+			dan++; // 증감식
+			System.out.println();
+		}
+	} // main
+
+} // close
+
+=====================================================while문을 활용한 학년별 반 출력=========================================================
+package ch03;
+
+public class Ch03Ex37 {
+
+	public static void main(String[] args) {
+		// while문의 중첩 : 초기식, 비교식, 증감식의 위치를 기억하자.
+		int hak = 1; // 학년 (초기식)
+		while(hak <= 3) { // 비교식
+			System.out.println(hak + "학년");
+			
+			//학년별 10반까지 출력해라.
+			int ban = 1; // 반
+		    while(ban <= 10) {
+		    System.out.println("\t" + ban + "반");
+		    ban++;
+		    }
+			
+			hak++; // 증감식
+		}
+
+	} // main
+
+} // class
+=====================================================for문을 활용한 구구단 출력=========================================================
+package ch03;
+
+public class Ch03Ex39 {
+
+	public static void main(String[] args) {
+		int dan = 2; // 초기식
+		while(dan <= 9) { // 조건식
+			System.out.println("===" + dan + "단===");
+			
+			int gop = 1; // 초기식
+			while(gop <= 9) { //조건식
+				System.out.printf("%d * %d = %d\t", dan, gop, dan * gop);
+				gop++; // 증감식
+			}
+			
+			dan++; // 증감식
+			System.out.println(); // 줄바꿈
+		}
+	} // main
+
+} // close
+=====================================================for문을 활용한 학년별 반 출력=========================================================
+package ch03;
+/*
+ * for : 반복문 (Loop Statement)
+ *  - 초기식, 조건식, 증감식을 한 곳으로 모아 놓은 형태
+ *  - for(초기식; 조건식; 증감식) {수행 코드}
+ */
+
+public class Ch03Ex40 {
+	
+
+	public static void main(String[] args) {
+		//0에서 10까지 출력.
+		for(int endPoint = 0; endPoint <= 10; endPoint++) {
+			System.out.print(endPoint + "\t");
+			
+		}
+		System.out.println(); // 줄바꿈
+		//10에서 0까지 출력.
+			for(int endPoint = 10; endPoint >= 0; endPoint--) {
+				System.out.print(endPoint + "\t");
+		} // for문
+	}// main	
+		
+} // class
