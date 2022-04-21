@@ -1184,3 +1184,47 @@ public class Ch03Ex40 {
 	}// main	
 		
 } // class
+
+=========================================if~else~if~else문을 활용한 계산기 만들기==========================================================
+package ch03;
+
+import java.util.Scanner;
+
+public class Ch03Ex32 {
+
+	public static void main(String[] args) {
+	
+		int fNum, sNum, res = 0; // 첫번째 숫자, 두번째 숫자, 결과값 0으로 초기화
+		String giho; // 부호 선언
+		Scanner scan = new Scanner(System.in);
+
+		System.out.print("정수 입력 : ");
+		fNum = scan.nextInt();
+
+		System.out.print("+ - * / 중 하나의 기호 입력 : ");
+		giho = scan.next();
+
+		System.out.print("정수 입력 : ");
+		sNum = scan.nextInt();
+
+		scan.close();
+
+		if( giho.equals("+") ) {  // 문자열 비교문 equals (정수: ==)
+			System.out.println(fNum + sNum);
+		} else if( giho.equals("-") ) {
+			System.out.println(fNum - sNum);
+		} else if( giho.equals("*") ) {
+			System.out.println(fNum * sNum);
+		} else if( giho.equals("/") ) {
+			System.out.println(fNum / sNum);
+		} else {
+			System.out.println("입력된 값이 올바르지 않습니다.");
+			System.out.println("계산기를 종료 합니다.");
+			System.exit(0); // 프로그램 종료 표시
+		}
+		System.out.printf("%d %s %d = %d\n", fNum, giho, sNum, res); // 수식 검사
+
+	}//main
+
+}//class
+
