@@ -1310,3 +1310,104 @@ public class Ch03Ex56 {
 		}//for
 	}//main
 }//class
+
+===================================================if문을 활용한 양수/음수 판별=========================================================
+package ch03;
+
+import java.util.Scanner;
+
+public class Ch03Ex57 {
+
+	public static void main(String[] args) {
+		//한 개의 정수를 입력받아
+		//양수(positive integer)인지 음수(negative number)인지 출력하는 작업을 반복하다가
+		//0이 입력되면 종료하는 프로그램을 작성하시오.
+		Scanner scan = new Scanner(System.in);
+		
+		int userInput = 0; // 반복문 초기식
+		while(true) {
+			System.out.print("정수를 입력하세요 : "); 
+			// 해당 문구가 반복되어야 하므로 while문 안에 있어야 한다.
+			userInput = scan.nextInt();
+			if(userInput == 0) break; // 프로그램 종료 (break를 걸어줬으므로 증감식은 생략된다)
+			else if (userInput > 0) 
+				System.out.println("positive integer"); // 양수 출력
+			else if (userInput < 0) 
+				System.out.println("negative number"); // 음수 출력
+		}// while문 안에 if문이 있어야 한다.
+
+		scan.close(); // 모든 입력이 끝나는 지점에 작성해준다.
+	}//main
+
+}//class
+
+==================================================배열 (Array) 기본 개념과 수행=====================================================
+package ch041;
+
+public class Ch041Ex03 {
+
+	public static void main(String[] args) {
+		// 배열은 길이 변경이 불가능 하다.
+		int [] iArr1 = new int [3]; // iArr1이라는 배열에 3칸짜리 공간 생성
+		iArr1[0] = 7; // 7대입
+		iArr1[1] = 8;
+		iArr1[2] = 9;
+		System.out.println(iArr1[2]);
+		
+		iArr1 = new int [5]; // iArr1 배열 재선언 (수정) 
+		iArr1[0] = 1;
+		iArr1[1] = 2;
+		iArr1[2] = 3;
+		iArr1[3] = 4;
+		iArr1[4] = 5;
+		// 기존에 7,8,9가 담긴 3칸짜리 배열은 사라지고,
+		// 0으로 초기화 된 5칸짜리 배열이 새로 연결된다.
+		System.out.println(iArr1[2]);
+
+	} // main
+} // class
+
+==================================================배열 (Array)을 이용한 3의 배수 출력=====================================================
+package ch041;
+
+public class Ch041Ex051 {
+
+	public static void main(String[] args) {
+		
+		int [] iArr = {99, 88, 77, 66, 55};
+		for (int i = 0; i < iArr.length; i++) { 
+			if(iArr[i] % 3 ==0) { // iArr의 i번지로 접근 
+				System.out.println("3으로 나눈 나머지가 0인 수 : " + iArr[i]);
+			}
+		}
+
+	} // main
+
+} // class
+
+==================================================배열 (Array)을 이용한 로또 번호 출력=====================================================
+package ch041;
+
+public class Ch041Ex053 {
+
+	public static void main(String[] args) { 
+		int lotto[] = new int [6]; // 번호 생성 
+		for(int i=0; i<6; i++) { 
+			lotto[i] = (int)(Math.random() * 45) + 1;  
+			
+			for(int j=0; j<i; j++) { // 중복 번호 제거
+				//ㄴ i가 0일 때는 수행하지 X
+				if(lotto[i] == lotto[j]) { 
+					i--; 
+					break; 
+					} 
+				} 
+			} 
+		
+		System.out.print("로또 번호: "); // 번호 출력 
+		for(int i=0; i<6; i++) { 
+			System.out.print(lotto[i] + " "); 
+		} 
+		} 
+	}
+
