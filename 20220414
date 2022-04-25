@@ -1411,3 +1411,22 @@ public class Ch041Ex053 {
 		} 
 	}
 
+==================================================배열 (Array)의 오름차순 정렬========================================================
+package ch041;
+
+import java.util.Arrays;
+
+public class Ch041Ex055 {
+
+	public static void main(String[] args) {
+
+		int [] iArr2 = {34, 16, 20, 11, 7, 14};
+		System.out.println(Arrays.toString(iArr2));
+		
+		Arrays.sort(iArr2); // 오름차순으로 정렬
+		System.out.println(Arrays.toString(iArr2));
+	
+	
+	}//main
+
+}///class
