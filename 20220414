@@ -1959,3 +1959,115 @@ public class Ch051Ex03 {
 	}//main
 
 }//class
+
+================================================instanceof 연산자============================================================
+package ch051;
+
+/*
+ * instanceof 연산자 : 누구의 instance인가? : 어느 class 형태의 메모리인가? : 판별
+ *  - true, false만을 리턴
+ */
+public class Ch051Ex05 {
+
+	public static void main(String[] args) {
+
+		People p1 = new Student();
+		if(p1 instanceof Student) {
+			System.out.println("p1은 Student 객체");
+		} else if(p1 instanceof Teacher) {
+			System.out.println("p1은 Teacher 객체");
+		}
+
+	}//main
+
+}//class
+
+
+=====================================================다형성의 한계===================================================
+package ch051;
+
+/*
+ * 다형성의 한계
+ *  - 부모 타입의 변수는 자식 객체의 고유 부분에는 접근할 수 없다
+ *     -> 극복 : Object Data Type Casting : 객체 타입 변경
+ */
+public class Ch051Ex04 {
+
+	public static void main(String[] args) {
+
+		People p = new Teacher();
+		p.familyName = "홍";
+		p.name = "길동";
+		p.address = "신수동";
+		p.tel = "010";
+		//p.subject = "java";//error//부모 타입의 변수는 자식 객체의 고유 영역에는 접근할 수 없다
+		//p.payAccount = "KB";//error
+
+		//Object Data Type Casting : 객체 타입 변경 필요
+		Teacher t = (Teacher) p;
+		t.subject = "java";
+		t.payAccount = "KB";
+
+	}//main
+
+}//class
+
+===============================================학교 인사 관리 시스템===================================================
+package ch051;
+
+import java.util.Scanner;
+
+public class Ch051Ex06 {
+
+	public static void main(String[] args) {
+
+		People [] peoples = new People[10];
+		Scanner scan = new Scanner(System.in);
+		//0:종료, 1:입력, 2:출력
+		//11:Teacher 입력, 12:Student 입력
+		int mainMenuNo = 0, subMenuNo = 0, arrIndex = 0;
+
+		while(true) {
+			System.out.println("\n=== 학교 인사 관리 시스템 ===");
+			System.out.print("0:종료, 1:입력, 2:출력, 선택하세요 : ");
+			mainMenuNo = scan.nextInt();
+
+			if(mainMenuNo == 0) {
+				System.out.println("=== 학교 인사 관리 시스템을 종료 합니다 ===");
+				scan.close();
+				break;
+			} else if(mainMenuNo == 1) {
+				System.out.print("11:Teacher 입력, 12:Student 입력, 선택하세요 : ");
+				subMenuNo = scan.nextInt();//숫자 입력 + 엔터 키 누름
+				scan.nextLine();//엔터 키 누름 전기 신호 제거
+				if(subMenuNo == 11) {
+					Teacher t = new Teacher();
+					t.familyName = scan.nextLine();
+					t.name = scan.nextLine();
+					t.subject = scan.nextLine();
+					t.payAccount = scan.nextLine();
+					peoples[arrIndex] = t;
+					arrIndex++;
+				} else if(subMenuNo == 12) {
+					Student s = new Student();
+					s.familyName = scan.nextLine();
+					s.name = scan.nextLine();
+					s.grade = scan.nextLine();
+					s.ban = scan.nextLine();
+					peoples[arrIndex] = s;
+					arrIndex++;
+				} else {
+					System.out.println("=== wrong input. try again. ===");
+				}
+			} else if(mainMenuNo == 2) {
+				//보류
+			} else {
+				System.out.println("=== wrong input. try again. ===");
+			}
+			
+		}//while
+
+
+	}//main
+
+}//class
