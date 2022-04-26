@@ -1897,3 +1897,65 @@ public class Ch051Ex01 {
 	}//main
 
 }//class
+=============================================Polymorphism (다형성)===================================================
+package ch051;
+
+public class Ch051Ex02 {
+
+	public static void main(String[] args) {
+
+		People p1 = new People();
+		Teacher t1 = new Teacher();
+		Student s1 = new Student();
+		//=========================
+		People p2 = new Teacher();//부모 타입의 변수는 자식 타입의 객체 주소를 가질 수 있다
+		p2.familyName = "홍";
+		p2.name = "길동";
+		p2.address = "신수동";
+		p2.tel = "010";
+		//p2.subject = "java";//error
+		//p2.payAccount = "KB";//error
+		Teacher t4 = (Teacher) p2;//Object Data Type Casting//객체 타입 변경
+		t4.subject = "java";
+		t4.payAccount = "KB";
+
+		//People 타입의 변수 p2는 Teacher의 고유 영역에 뭐가 있는지 모른다
+		People p3 = new Student();
+		//=========================
+//		Teacher t2 = new People();//error
+//		Student s2 = new People();//error
+//		Teacher t3 = new Student();//error
+//		Student s3 = new Teacher();//error
+
+	}//main
+
+}//class
+
+===========================================Homogeneous / Heterogeneous Collection ===========================================
+package ch051;
+
+public class Ch051Ex03 {
+
+	public static void main(String[] args) {
+
+		Teacher [] tArr = new Teacher[3];
+		tArr[0] = new Teacher();
+		//tArr[1] = new Student();//error
+		//tArr[2] = new People();//error
+
+		Student [] sArr = new Student[3];
+		//sArr[0] = new Teacher();//error
+		sArr[1] = new Student();
+		//sArr[2] = new People();//error
+
+		People [] pArr = new People[3];
+		pArr[0] = new Teacher();
+		pArr[1] = new Student();
+		pArr[2] = new People();
+		/*
+		 * Heterogeneous Collection
+		 *  - 부모 타입의 배열에는 자식 객체의 주소를 담을 수 있다.
+		 */
+	}//main
+
+}//class
