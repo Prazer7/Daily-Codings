@@ -2070,4 +2070,26 @@ public class Ch051Ex09 {
 	}//main
 
 }//class
+==================================================for / forEach ==================================================
+package ch041;
+
+public class Ch041Ex16 {
+
+	public static void main(String[] args) {
+
+		String [] strArr1 = {"nice"," to meet"," you,", " too."};
+
+		for (int i = 0; i < strArr1.length; i++) {
+			System.out.print(strArr1[i]);
+		}//for => 특정 번지에 접근
+
+		System.out.println();
+
+		for(String s : strArr1) {
+			System.out.print(s);
+		}//forEach => 특정 번지에 값을 추출
+
+	}//main
+
+}//class
 
